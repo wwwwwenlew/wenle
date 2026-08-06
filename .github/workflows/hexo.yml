@@ -3,7 +3,8 @@ name: Deploy Hexo Site
 on:
   push:
     branches:
-      - main # 如果你的默认分支叫 master，请把它改成 master
+      - master
+      - main
 
 permissions:
   contents: read
@@ -27,7 +28,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # 使用稳定的 Node 20 环境编译
+          node-version: '20'
 
       - name: Install Dependencies
         run: |
@@ -41,8 +42,8 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './public' # Hexo 生成的静态网页文件夹
-
+          path: './public' # 移除 one-blog 前缀，直接打包根目录下的 public
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
