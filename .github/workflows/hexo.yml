@@ -1,0 +1,48 @@
+name: Deploy Hexo Site
+
+on:
+  push:
+    branches:
+      - main # 如果你的默认分支叫 master，请把它改成 master
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # 使用稳定的 Node 20 环境编译
+
+      - name: Install Dependencies
+        run: |
+          npm install --legacy-peer-deps
+
+      - name: Build Hexo
+        run: |
+          npx hexo clean
+          npx hexo generate
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './public' # Hexo 生成的静态网页文件夹
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
