@@ -1,0 +1,19 @@
+# _config.fluid.yml 核心前端个性化配置
+navbar:
+  blog_title: "wwwwwenle" # 导航栏左侧标题
+
+index:
+  banner_img: /img/default.png # 首页大图（可换成你的前端代码背景图）
+  text: "前方的路，用代码去丈量。" # 首页打字机动画文字
+
+# 极客最爱的代码高亮设计
+code:
+  highlight:
+    enable: true
+    lib: "highlightjs"
+    bg_color: true
+    style: "Github Dark" # 支持 Github Dark / One Dark / Monokai 等
+
+# 开启评论系统（方便同行交流，支持 Valine、Gitalk、Waline 等）
+comment:
+  enable: false
