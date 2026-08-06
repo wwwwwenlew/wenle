@@ -3,8 +3,7 @@ name: Deploy Hexo Site
 on:
   push:
     branches:
-      - master
-      - main
+      - main # 精准锁定你截图中的 main 分支
 
 permissions:
   contents: read
@@ -31,10 +30,14 @@ jobs:
           node-version: '20'
 
       - name: Install Dependencies
+        # 严格告诉服务器，进入你截图中的 one-blog 文件夹执行
+        working-directory: ./one-blog
         run: |
           npm install --legacy-peer-deps
 
       - name: Build Hexo
+        # 严格告诉服务器，进入你截图中的 one-blog 文件夹执行
+        working-directory: ./one-blog
         run: |
           npx hexo clean
           npx hexo generate
@@ -42,7 +45,8 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './public' # 移除 one-blog 前缀，直接打包根目录下的 public
+          # 严格指向 one-blog 生成的静态网页包
+          path: './one-blog/public'
           
       - name: Deploy to GitHub Pages
         id: deployment
