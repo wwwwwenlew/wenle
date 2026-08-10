@@ -1,4 +1,7 @@
 # _config.fluid.yml 核心前端个性化配置
+# 网页图标（放在顶格，不要缩进）
+favicon: /img/tubiao.png
+
 navbar:
   blog_title: "wwwwwenle" # 导航栏左侧标题
 
