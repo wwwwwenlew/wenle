@@ -1,0 +1,21 @@
+/* 给首页文章卡片增加微交互 */
+.index-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+.index-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 自定义代码块字体为 Fira Code / JetBrains Mono */
+code,
+pre {
+  font-family: "Fira Code", "JetBrains Mono", Consolas, monospace !important;
+}
+
+.tagcloud a {
+  color: #3c4858 !important;
+  font-weight: 500;
+}

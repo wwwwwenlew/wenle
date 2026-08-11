@@ -1,22 +1,84 @@
 # _config.fluid.yml 核心前端个性化配置
 # 网页图标（放在顶格，不要缩进）
 favicon: /img/tubiao.png
+custom_css: /css/custom.css
 
 navbar:
   blog_title: "wwwwwenle" # 导航栏左侧标题
 
 index:
-  banner_img: /img/default.png # 首页大图（可换成你的前端代码背景图）
-  text: "前方的路，用代码去丈量。" # 首页打字机动画文字
+  # banner_img: /img/default.png # 首页大图（可换成你的前端代码背景图）
+  # text: "前方的路，用代码去丈量。" # 首页打字机动画文字
+  banner_img: /img/banner.jpg # 建议用写满代码的深色壁纸或极简黑客风
+  text: "const developer = { role: 'Frontend Engineer', stack: ['Vue', 'React', 'TypeScript'] };"
+  slogan:
+    enable: true
+    text: "while (alive) { eat(); sleep(); code(); }"
+
+# ---------------------------------------------------------
+# 各个子页面的 Banner 图配置
+# ---------------------------------------------------------
+
+# 归档页 (Archives)
+# archive:
+#   banner_img: /img/banner.jpg
+
+# # 分类页 (Categories)
+# category:
+#   banner_img: /img/banner.jpg
+
+# # 标签页 (Tags)
+# tag:
+#   banner_img: /img/banner.jpg
+
+# # 关于页 (About)
+# about:
+#   banner_img: /img/banner.jpg
+
+# # 自定义页面 (如果有新建其他单独页面)
+# page:
+#   banner_img: /img/banner.jpg
 
 # 极客最爱的代码高亮设计
 code:
   highlight:
     enable: true
     lib: "highlightjs"
-    bg_color: true
+    # bg_color: true
     style: "Github Dark" # 支持 Github Dark / One Dark / Monokai 等
 
 # 开启评论系统（方便同行交流，支持 Valine、Gitalk、Waline 等）
 comment:
   enable: false
+
+menu:
+  - { key: "首页", link: "/", icon: "iconfont icon-home-fill" }
+  - { key: "归档", link: "/archives/", icon: "iconfont icon-archive-fill" }
+  - { key: "分类", link: "/categories/", icon: "iconfont icon-category-fill" }
+  - { key: "标签", link: "/tags/", icon: "iconfont icon-tags-fill" }
+  - { key: "关于我", link: "/about/", icon: "iconfont icon-user-fill" }
+
+# ---------------------------------------------------------
+# 页脚配置 (Footer)
+# ---------------------------------------------------------
+footer:
+  # 支持 HTML 标签，替换掉默认的 Hexo 和 Fluid 声明
+  content: '<span>Copyright &copy; 2026 <a href="/">WenLe</a></span>'
+
+# ---------------------------------------------------------
+# 关于页 (About Page) 配置
+# ---------------------------------------------------------
+about:
+  # 1. 修改这里的头像路径（请先将你的头像图片放进 source/img/ 文件夹）
+  avatar: /img/avatar.png  # 替换成你的头像文件名，比如 /img/me.jpg
+
+  # 2. 修改头像下方的大标题（你的名字/昵称）
+  name: "WenLe"
+
+  # 3. 修改标题下方的小字（个人标签/一句话介绍）
+  intro: "前端开发工程师 / 追求极致体验与高性能 Web 应用"
+
+  # 4. （可选）如果你想把社交图标放出来，这里可以写你的 GitHub 链接
+  icons:
+    - { class: "iconfont icon-github-fill", link: "https://github.com/你的GitHub用户名", tip: "GitHub" }
+    # - { class: "iconfont icon-mail-fill", link: "mailto:yourmail@domain.com", tip: "邮箱" }
