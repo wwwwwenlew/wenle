@@ -19,3 +19,178 @@ pre {
   color: #3c4858 !important;
   font-weight: 500;
 }
+
+/* ---------------------------- */
+/* 强制抹除 Banner 的所有背景属性，实现与页面底色无缝融合 */
+.page-header {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* 移除遮罩层，让文本更加锐利清晰 */
+.page-header .mask {
+  background-color: transparent !important;
+}
+
+/* 微调纯文本标题的位置，避免被顶部的导航栏遮挡 */
+.banner-text {
+  margin-top: 60px !important; /* 如果觉得文字离导航栏太近或太远，可以微调这个数值 */
+}
+
+/* 让子页面的标题颜色适应网页底色（如果是深色网页底色，文字就是白色） */
+.banner-text .h2,
+.banner-text .post-title {
+  color: inherit !important;
+}
+
+/* 强制透明化除首页外的 Banner 区域背景色 */
+#banner {
+  background-color: transparent !important;
+}
+
+/* 消除遮罩层残留 */
+.mask {
+  background-color: transparent !important;
+}
+
+/* =========================================
+   修复纯文字版 Banner 颜色太浅的问题
+========================================= */
+/* =========================================
+   修复版：只针对非首页（子页面）生效的样式
+========================================= */
+
+/* 1. 消除子页面 Banner 区域的默认遮罩和底色 */
+body.is-subpage #banner,
+body.is-subpage .page-header {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+body.is-subpage .mask {
+    background-color: transparent !important;
+}
+
+/* 2. 修复子页面大标题的颜色（首页的字体颜色不会受影响） */
+body.is-subpage .banner-text .h2,
+body.is-subpage .banner-text .post-title,
+body.is-subpage .banner-text .typing {
+    color: #3c4858 !important; 
+    text-shadow: none !important;
+}
+
+/* 3. 子页面专属：苹果毛玻璃质感导航栏 */
+body.is-subpage .navbar {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* 4. 强制子页面导航栏文字和图标变暗 */
+body.is-subpage .navbar .navbar-brand,
+body.is-subpage .navbar .nav-link,
+body.is-subpage .navbar .iconfont {
+    color: #3c4858 !important;
+}
+/* 5. 修复文章详情页副标题（日期、分类、字数等 Meta 信息）的颜色 */
+body.is-subpage .post-meta,
+body.is-subpage .post-meta a,
+body.is-subpage .post-meta i {
+    color: #6c757d !important; /* 使用次级灰色，与主标题形成视觉层级区分 */
+    text-shadow: none !important; /* 务必去掉为了配图而加的黑色文字阴影，否则字体边缘会很脏 */
+}
+
+/* 鼠标悬停在分类/标签链接上时的颜色反馈 */
+body.is-subpage .post-meta a:hover {
+    color: #42b883 !important; /* 既然你常用 Vue3，悬停可以配个极客感的 Vue 绿 */
+}
+
+/* =========================================
+   Notion 风格文章页重构 (左目录 + 扁平化正文)
+========================================= */
+
+/* ------------------------------------
+   1. 布局重构：将目录(TOC)强行移动到左侧
+------------------------------------ */
+@media (min-width: 992px) {
+    /* 找到包裹正文和目录的父级 Row，开启 Flex 布局 */
+    body.is-subpage main > .container > .row {
+        display: flex;
+        justify-content: center;
+    }
+    
+    /* 强制将目录模块排在最前面 (左侧) */
+    body.is-subpage .toc-container {
+        order: -1 !important;
+        padding-right: 2rem !important; /* 给右侧正文留出呼吸空间 */
+    }
+    
+    /* 清除 Fluid 默认给正文加的左侧偏移量(offset) */
+    body.is-subpage .col-lg-8.offset-lg-2 {
+        margin-left: 0 !important;
+    }
+}
+
+/* ------------------------------------
+   2. 目录(TOC) UI 定制：左侧红框效果
+------------------------------------ */
+body.is-subpage #toc {
+    background-color: #f7f7f9 !important; /* 极简浅灰底色 */
+    border-radius: 12px;
+    padding: 24px 16px;
+    box-shadow: none !important;
+}
+
+/* 目录项的基础间距 */
+body.is-subpage #toc .toc-item {
+    margin-bottom: 4px;
+}
+
+/* 目录当前高亮项的样式 (你截图里的浅紫色圆角背景) */
+body.is-subpage #toc .tocbot-active-link {
+    background-color: #ede9fe !important; /* 浅紫背景 */
+    color: #5b21b6 !important;            /* 深紫文字 */
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin-left: -8px; /* 抵消 padding 带来的位移 */
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+/* ------------------------------------
+   3. 正文扁平化与标题融合：右侧红框效果
+------------------------------------ */
+/* 抹除文章卡片的白色背景和阴影，实现与网页底色无缝融合 */
+body.is-subpage .board {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    margin-top: 20px !important; /* 拉近与顶部大标题的距离 */
+}
+
+/* 强制让大标题和副标题靠左对齐，与正文对齐 */
+body.is-subpage .banner-text {
+    text-align: left !important;
+}
+
+/* 加粗放大文章大标题 */
+body.is-subpage .banner-text .h2,
+body.is-subpage .banner-text .post-title {
+    font-size: 2.8rem !important;
+    font-weight: 800 !important;
+    color: #1a1a1a !important; /* 极深灰 */
+}
+
+/* 副标题（日期、标签）微调对齐 */
+body.is-subpage .post-meta {
+    justify-content: flex-start !important; /* Flex 靠左 */
+    margin-top: 15px !important;
+}
+
+/* 正文内部 H1/H2 标题加粗，去掉默认下划线更显现代感 */
+.markdown-body h1, 
+.markdown-body h2 {
+    font-weight: 800 !important;
+    border-bottom: none !important; 
+    margin-top: 2em !important;
+}

@@ -2,9 +2,20 @@
 # 网页图标（放在顶格，不要缩进）
 favicon: /img/tubiao.png
 custom_css: /css/custom.css
+# 引入自定义的 JS 文件
+custom_js:
+  - /js/custom.js
 
 navbar:
   blog_title: "wwwwwenle" # 导航栏左侧标题
+  menu:
+    - { key: "首页", link: "/", icon: "iconfont icon-home-fill" }
+    - { key: "文章", link: "/archives/", icon: "iconfont icon-archive-fill" } # 把“归档”改叫“文章”更直白
+    - { key: "作品", link: "/projects/", icon: "iconfont icon-plan" }
+    - { key: "关于我", link: "/about/", icon: "iconfont icon-user-fill" }
+    # 下面这两个被我用 # 隐藏了，以后想用可以把 # 删掉
+    # - { key: "分类", link: "/categories/", icon: "iconfont icon-category-fill" }
+    # - { key: "标签", link: "/tags/", icon: "iconfont icon-tags-fill" }
 
 index:
   # banner_img: /img/default.png # 首页大图（可换成你的前端代码背景图）
@@ -19,16 +30,19 @@ index:
 # 各个子页面的 Banner 图配置
 # ---------------------------------------------------------
 
-# 归档页 (Archives)
-# archive:
-#   banner_img: /img/banner.jpg
+# 文章 (Archives)
+archive:
+  # banner_img: /img/wz.jpg
+  banner_img: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+  banner_img_height: 50
+  banner_mask_alpha: 0
 
 # # 分类页 (Categories)
 # category:
 #   banner_img: /img/banner.jpg
 
-# # 标签页 (Tags)
-# tag:
+# # 作品 (Tags)
+# project:
 #   banner_img: /img/banner.jpg
 
 # # 关于页 (About)
@@ -36,8 +50,10 @@ index:
 #   banner_img: /img/banner.jpg
 
 # # 自定义页面 (如果有新建其他单独页面)
-# page:
-#   banner_img: /img/banner.jpg
+page:
+  banner_img: /img/banner.jpg
+  banner_img_height: 50
+  banner_mask_alpha: 0
 
 # 极客最爱的代码高亮设计
 code:
@@ -51,13 +67,6 @@ code:
 comment:
   enable: false
 
-menu:
-  - { key: "首页", link: "/", icon: "iconfont icon-home-fill" }
-  - { key: "归档", link: "/archives/", icon: "iconfont icon-archive-fill" }
-  - { key: "分类", link: "/categories/", icon: "iconfont icon-category-fill" }
-  - { key: "标签", link: "/tags/", icon: "iconfont icon-tags-fill" }
-  - { key: "关于我", link: "/about/", icon: "iconfont icon-user-fill" }
-
 # ---------------------------------------------------------
 # 页脚配置 (Footer)
 # ---------------------------------------------------------
@@ -70,7 +79,7 @@ footer:
 # ---------------------------------------------------------
 about:
   # 1. 修改这里的头像路径（请先将你的头像图片放进 source/img/ 文件夹）
-  avatar: /img/avatar.png  # 替换成你的头像文件名，比如 /img/me.jpg
+  avatar: /img/avatar.png # 替换成你的头像文件名，比如 /img/me.jpg
 
   # 2. 修改头像下方的大标题（你的名字/昵称）
   name: "WenLe"
@@ -80,5 +89,9 @@ about:
 
   # 4. （可选）如果你想把社交图标放出来，这里可以写你的 GitHub 链接
   icons:
-    - { class: "iconfont icon-github-fill", link: "https://github.com/你的GitHub用户名", tip: "GitHub" }
+    - {
+        class: "iconfont icon-github-fill",
+        link: "https://github.com/你的GitHub用户名",
+        tip: "GitHub",
+      }
     # - { class: "iconfont icon-mail-fill", link: "mailto:yourmail@domain.com", tip: "邮箱" }
