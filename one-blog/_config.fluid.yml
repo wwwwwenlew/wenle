@@ -2,7 +2,7 @@
 # 网页图标（放在顶格，不要缩进）
 favicon: /img/tubiao.png
 custom_css: 
-  - /custom/custom.css?v=20260812
+  - /custom/custom.css
 # 引入自定义的 JS 文件
 custom_js:
   - /custom/custom.js
