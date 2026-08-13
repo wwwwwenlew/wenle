@@ -2,10 +2,10 @@
 # 网页图标（放在顶格，不要缩进）
 favicon: /img/tubiao.png
 custom_css: 
-  - /custom/custom.css
+  - /css/custom.css
 # 引入自定义的 JS 文件
 custom_js:
-  - /custom/custom.js
+  - /js/custom.js
 
 navbar:
   blog_title: "wwwwwenle" # 导航栏左侧标题
