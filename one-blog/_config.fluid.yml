@@ -73,7 +73,7 @@ comment:
 # ---------------------------------------------------------
 footer:
   # 支持 HTML 标签，替换掉默认的 Hexo 和 Fluid 声明
-  content: '<span>Copyright &copy; 2026 <a href="/">WenLe</a></span>'
+  content: '<span>Copyright &copy; 2026 <a href="/wenle/">WenLe</a></span>'
 
 # ---------------------------------------------------------
 # 关于页 (About Page) 配置
@@ -92,7 +92,7 @@ about:
   icons:
     - {
         class: "iconfont icon-github-fill",
-        link: "https://github.com/你的GitHub用户名",
+        link: "https://github.com/wwwwwenlew",
         tip: "GitHub",
       }
     # - { class: "iconfont icon-mail-fill", link: "mailto:yourmail@domain.com", tip: "邮箱" }
