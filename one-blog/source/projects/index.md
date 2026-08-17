@@ -6,8 +6,7 @@ date: 2026-08-11 11:26:33
 <div class="projects-page">
 <header class="projects-intro">
 <span class="projects-eyebrow">SELECTED WORK · 2026</span>
-<h1>把业务场景，做成可以体验的产品。</h1>
-<p>这里记录我在前端工程、三维可视化与交互体验上的实践。每个作品都提供可直接访问的在线演示。</p>
+<p class="projects-lead">这里记录我在前端工程、三维可视化与交互体验上的实践。每个作品都提供可直接访问的在线演示。</p>
 </header>
 
 <article class="project-card project-card--featured">
@@ -17,7 +16,8 @@ date: 2026-08-11 11:26:33
 <span class="project-status"><i></i> ONLINE</span>
 </div>
 
-<h2>工业园区人员定位<br>安全监管平台</h2>
+<!-- <h2>工业园区人员定位<br>安全监管平台</h2> -->
+<h2>工业园区人员定位</h2>
 <p class="project-summary">面向工业园区安全管理场景，通过三维空间呈现人员位置、楼层状态与危险区域报警，让复杂信息更直观、更易判断。</p>
 
 <ul class="project-stack" aria-label="项目技术栈">

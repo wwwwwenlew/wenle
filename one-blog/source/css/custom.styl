@@ -353,10 +353,6 @@ body.is-projects-page #board > .container > .row > [class*='col-'] {
 }
 
 .projects-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
-  align-items: end;
-  gap: 64px;
   padding: 58px 0 38px;
 }
 
@@ -370,23 +366,15 @@ body.is-projects-page #board > .container > .row > [class*='col-'] {
   letter-spacing: 0.16em;
 }
 
-.projects-intro h1 {
-  grid-column: 1;
+.projects-intro .projects-lead {
+  width: 100%;
+  max-width: none;
   margin: 0;
-  max-width: 720px;
-  font-size: clamp(2rem, 4.2vw, 3.6rem);
-  font-weight: 800;
-  line-height: 1.16;
-  letter-spacing: -0.055em;
-}
-
-.projects-intro p {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  margin: 0 0 4px;
   color: var(--project-muted);
-  font-size: 1rem;
-  line-height: 1.85;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
 }
 
 .project-card {
@@ -885,17 +873,6 @@ body.is-projects-page #board > .container > .row > [class*='col-'] {
 }
 
 @media (max-width: 991px) {
-  .projects-intro {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-
-  .projects-intro p {
-    grid-column: 1;
-    grid-row: auto;
-    max-width: 680px;
-  }
-
   .project-card {
     grid-template-columns: 1fr;
   }
@@ -1230,7 +1207,7 @@ body.is-article-list-page .list-group-item-title {
 }
 
 /* 文章详情：限制阅读宽度，统一正文与底部信息 */
-body.is-post-page .header-inner {
+body.is-subpage.is-post-page .header-inner {
   height: 56px !important;
 }
 
@@ -1649,7 +1626,7 @@ html[data-user-color-scheme='dark'] .about-focus-grid article {
     padding: 0 28px;
   }
 
-  body.is-post-page .header-inner {
+  body.is-subpage.is-post-page .header-inner {
     height: 56px !important;
   }
 
