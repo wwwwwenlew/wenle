@@ -1096,6 +1096,49 @@ body.is-subpage .navbar .nav-link:hover::after {
   transform: scaleX(1);
 }
 
+/* 子页面移动导航：白色导航栏需要深色菜单按钮和独立的展开面板。 */
+@media (max-width: 991.98px) {
+  body.is-subpage #navbar-toggler-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 7px;
+    border: 1px solid var(--shell-line);
+    border-radius: 12px;
+    background: var(--shell-surface-soft);
+  }
+
+  body.is-subpage #navbar-toggler-btn .animated-icon span {
+    background: var(--shell-ink) !important;
+  }
+
+  body.is-subpage #mobile-grid-menu {
+    background: var(--shell-bg) !important;
+  }
+
+  body.is-subpage #mobile-grid-menu .mobile-grid-menu-inner {
+    padding-top: 76px;
+  }
+
+  body.is-subpage #mobile-grid-menu .mobile-grid-item {
+    border: 1px solid var(--shell-line);
+    background: var(--shell-surface);
+    box-shadow: 0 8px 24px rgba(23, 32, 51, 0.06);
+  }
+
+  body.is-subpage #mobile-grid-menu .mobile-grid-item:active {
+    background: var(--shell-accent-soft);
+  }
+
+  body.is-subpage #mobile-grid-menu .mobile-grid-item i,
+  body.is-subpage #mobile-grid-menu .mobile-grid-item span,
+  body.is-subpage #mobile-grid-menu a {
+    color: var(--shell-ink) !important;
+  }
+}
+
 body.is-subpage main {
   background: var(--shell-bg);
 }
