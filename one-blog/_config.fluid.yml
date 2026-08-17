@@ -33,6 +33,8 @@ index:
 
 # 文章 (Archives)
 archive:
+  title: 文章
+  subtitle: 文章
   # banner_img: /img/wz.jpg
   banner_img: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
   banner_img_height: 50
