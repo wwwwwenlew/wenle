@@ -16,18 +16,18 @@ date: 2026-08-11 11:26:33
 <span class="project-status"><i></i> ONLINE</span>
 </div>
 
-<!-- <h2>工业园区人员定位<br>安全监管平台</h2> -->
-<h2>工业园区人员定位</h2>
-<p class="project-summary">面向工业园区安全管理场景，通过三维空间呈现人员位置、楼层状态与危险区域报警，让复杂信息更直观、更易判断。</p>
+<!-- <h2>模型资源管理<br>数字孪生平台</h2> -->
+<h2>MX-ZY管理系统</h2>
+<p class="project-summary">面向数字孪生场景的 3D 模型资源管理平台，支持模型上传、在线预览、目录树编辑、数据融合配置和第三方应用授权，重点展示企业级中后台与 Three.js 场景管理能力。</p>
 
 <ul class="project-stack" aria-label="项目技术栈">
 <li>Vue 3</li>
+<li>Ant Design Vue</li>
 <li>Three.js</li>
-<li>GSAP</li>
 <li>TypeScript</li>
 </ul>
 
-<a class="project-demo-button" href="https://industrial-park-safety-3d.2038266753.workers.dev/" target="_blank" rel="noopener noreferrer">
+<a class="project-demo-button" href="https://mxzy-digital-twin-hub.2038266753.workers.dev/" target="_blank" rel="noopener noreferrer">
 <span>打开在线演示</span>
 <span class="project-demo-button__arrow" aria-hidden="true">↗</span>
 </a>
@@ -36,7 +36,7 @@ date: 2026-08-11 11:26:33
 <div class="project-card__visual" aria-hidden="true">
 <div class="visual-toolbar">
 <span></span><span></span><span></span>
-<b>SAFETY / OVERVIEW</b>
+<b>MODEL / DIGITAL TWIN</b>
 </div>
 <div class="visual-stage">
 <div class="visual-grid"></div>
@@ -47,8 +47,8 @@ date: 2026-08-11 11:26:33
 <div class="visual-person visual-person--two"></div>
 </div>
 <div class="visual-footer">
-<span><i class="is-safe"></i> 运行正常</span>
-<span><i class="is-alert"></i> 1 条告警</span>
+<span><i class="is-safe"></i> 模型预览</span>
+<span><i class="is-alert"></i> 数据融合</span>
 </div>
 </div>
 </article>
@@ -60,14 +60,26 @@ date: 2026-08-11 11:26:33
 </div>
 
 <div class="projects-grid">
-<article class="project-mini-card project-mini-card--placeholder">
+<article class="project-mini-card">
 <div class="project-mini-card__meta">
 <span>02</span>
-<span>RESERVED</span>
+<span class="project-mini-status"><i></i> ONLINE</span>
 </div>
-<div class="project-placeholder-mark" aria-hidden="true"><i></i><i></i></div>
-<h3>下一件作品正在构建</h3>
-<p>这里已预留项目入口。完成新作品后，替换这张占位卡即可自动加入作品网格。</p>
+<div>
+<p class="project-mini-type">工业园区安全监管 / 2026</p>
+<h3>工业园区人员定位</h3>
+<p class="project-mini-summary">面向工业园区安全管理场景，通过三维空间呈现人员位置、楼层状态与危险区域报警，让复杂信息更直观、更易判断。</p>
+</div>
+<ul class="project-mini-stack" aria-label="项目技术栈">
+<li>Vue 3</li>
+<li>Three.js</li>
+<li>GSAP</li>
+<li>TypeScript</li>
+</ul>
+<a class="project-mini-link" href="https://industrial-park-safety-3d.2038266753.workers.dev/" target="_blank" rel="noopener noreferrer">
+<span>在线体验</span>
+<span aria-hidden="true">→</span>
+</a>
 </article>
 
 <!-- 新增作品模板：复制开始
@@ -101,12 +113,12 @@ date: 2026-08-11 11:26:33
 </div>
 
 <div class="project-feature-grid">
-<article><span>01</span><h3>三维园区总览</h3><p>集中呈现多个子园区的空间关系与运行状态。</p></article>
-<article><span>02</span><h3>视角平滑切换</h3><p>点击园区即可进入对应场景，快速定位关注区域。</p></article>
-<article><span>03</span><h3>建筑楼层剖切</h3><p>按楼层控制显隐，查看建筑内部的人员分布。</p></article>
-<article><span>04</span><h3>人员状态提示</h3><p>悬停查看人员状态、所属园区与具体活动范围。</p></article>
-<article><span>05</span><h3>危险区域可视化</h3><p>通过高亮边界和动态效果强化风险感知。</p></article>
-<article><span>06</span><h3>报警事件模拟</h3><p>模拟危险品区域告警，展示完整交互反馈。</p></article>
+<article><span>01</span><h3>模型上传登记</h3><p>支持 GLTF、GLB、FBX 等模型资源登记，沉淀统一的模型资产列表。</p></article>
+<article><span>02</span><h3>在线模型预览</h3><p>通过 Three.js 渲染模型场景，支持基础视角浏览和模型节点查看。</p></article>
+<article><span>03</span><h3>模型目录编辑</h3><p>围绕 Mesh 节点生成业务目录树，支持后续数据融合和节点配置。</p></article>
+<article><span>04</span><h3>数据融合配置</h3><p>将模型节点与设备参数、业务接口、视频监控等数据进行绑定。</p></article>
+<article><span>05</span><h3>应用授权管理</h3><p>注册第三方应用，控制不同应用对场景模型和融合数据的访问权限。</p></article>
+<article><span>06</span><h3>场景默认配置</h3><p>支持默认场景、GIS 经纬度等信息维护，贴近真实数字孪生管理流程。</p></article>
 </div>
 </section>
 </div>
